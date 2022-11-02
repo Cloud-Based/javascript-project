@@ -7,7 +7,11 @@ const requestListener = (request, response) => {
   const { url, method } = request;
 
   if (url === '/') {
-    response.end('<h1>Halaman ini adalah Home</h1>');
+    if (method === 'GET') {
+      response.end('<h1>Halaman ini adalah Homepage</h1>');
+    } else {
+      response.end(`<h1>Halaman tidak dapat diakses dengan ${ method } request</h1>`);
+    }
   } else if (url === '/about') {
     response.end('<h1>Halaman ini adalah About</h1>');
   } else {
