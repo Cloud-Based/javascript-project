@@ -7,7 +7,7 @@ const init = async () => {
     host: 'localhost',
     routes: {
       cors: {
-        origin: ['http://notesapp-v1.dicodingacademy.com/'],
+        origin: ['*'],
       },
     },
   });
